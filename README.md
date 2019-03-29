@@ -29,8 +29,7 @@ Machine Translation (NMT) mimics that!
 
 <p align="center">
 Figure 1. <b>Encoder-decoder architecture</b> – example of a general approach for
-NMT. An encoder converts a source sentence into a "meaning" vector which is
-passed through a <i>decoder</i> to produce a translation.
+NMT.
 </p>
 
 Specifically, an NMT system first reads the source sentence using an *encoder*
@@ -39,7 +38,9 @@ a
 ["thought" vector](https://www.theguardian.com/science/2015/may/21/google-a-step-closer-to-developing-machines-with-human-like-intelligence),
 a sequence of numbers that represents the sentence meaning; a *decoder*, then,
 processes the sentence vector to emit a translation, as illustrated in
-Figure 1. This is often referred to as the *encoder-decoder architecture*. In
+Figure 1. 
+
+This is often referred to as the *encoder-decoder architecture*. In
 this manner, NMT addresses the local translation problem in the traditional
 phrase-based approach: it can capture *long-range dependencies* in languages,
 e.g., gender agreements; syntax structures; etc., and produce much more fluent
@@ -48,8 +49,13 @@ by
 [Google Neural Machine Translation systems](https://research.googleblog.com/2016/09/a-neural-network-for-machine.html).
 
 #### GNMT Architecture
-The following visualization shows the progression of GNMT as it translates a Chinese sentence to English. First, the network encodes the Chinese words as a list of vectors, where each vector represents the meaning of all words read so far (“Encoder”). Once the entire sentence is read, the decoder begins, generating the English sentence one word at a time (“Decoder”). To generate the translated word at each step, the decoder pays attention to a weighted distribution over the encoded Chinese vectors most relevant to generate the English word (“Attention”; the blue link transparency represents how much the decoder pays attention to an encoded word).
-![](assests/nmt-model-fast.gif)
+The following visualization shows the progression of GNMT as it translates a Chinese sentence to English. First, the network encodes the Chinese words as a list of vectors, where each vector represents the meaning of all words read so far (“Encoder”). 
+
+Once the entire sentence is read, the decoder begins, generating the English sentence one word at a time (“Decoder”). 
+
+To generate the translated word at each step, the decoder pays attention to a weighted distribution over the encoded Chinese vectors most relevant to generate the English word (“Attention”; the blue link transparency represents how much the decoder pays attention to an encoded word).
+
+![](assets/architecture.gif)
 
 #### Correlation Matrix
 ![](assets/example1.png)
